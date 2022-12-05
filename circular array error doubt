@@ -1,0 +1,13 @@
+#include<bits/stdc++.h>
+using namespace std;
+int main(){
+
+string neighbour(string array[], int i, int k)
+{
+    int j=i;
+    for(int count=1;count<=k;count++){
+        if(j==n-1){cout<<array[j];
+        j=0;}
+        else{cout<<array[j];j++;}
+    }
+   
