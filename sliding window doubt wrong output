@@ -1,0 +1,27 @@
+#include<bits/stdc++.h>
+using namespace std;
+
+
+int minsum(int array[],int n,int k){int sum=0;
+int nextsum;
+for(int i=0;i<k;i++){sum=sum+array[i];}
+for(int i=1;i<=n-k;i++){
+    nextsum=sum-array[i-1]+array[i+k-1];
+if(nextsum<sum){sum=nextsum;}
+else{continue;}}
+return sum;
+}
+int main(){
+
+int n;
+cin>>n;
+int array[n];
+for(int i=0;i<n;i++){cin>>array[i];}
+int k;
+cin>>k;
+
+cout<<minsum(array,n,k);
+// why not working this code!!!!!
+
+return 0;
+}
