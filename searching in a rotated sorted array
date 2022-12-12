@@ -1,0 +1,98 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define r(i,a,b) for(int i=a;i<b;i++)
+
+
+int binary_search(int array[],int n, int key){
+    int l=0;
+    int r=n-1;
+    int mid=(n-1)/2;
+    while(l!=r){
+        if(array[mid]>key){
+            r=mid;}
+        if(array[mid]<key){
+            l=mid;}
+        if(array[mid]==key){
+            return mid;
+            l=r;
+            break;}
+        mid=(l+r)/2;
+        if(r-l==1){
+          break;
+        }
+      };
+}
+
+int main(){
+
+
+
+
+
+
+
+int n;
+cin>>n;
+int array[n];
+r(i,0,n){cin>>array[i];}
+int key;
+cin>>key;
+
+
+int l=0;
+int r=n-1;
+int mid=(n-1)/2;
+while(l!=r){
+    if(array[mid]>array[r]){
+        l=mid;}
+    if(array[mid]<array[l]){
+        r=mid;}
+    if(array[mid]>array[mid+1]){
+        return mid;
+        l=r;
+        break;}
+    mid=(l+r)/2;
+    }
+int pre_array[mid+1];
+for(int i=0;i<=mid;i++){
+    pre_array[i]=array[i];
+}
+
+int post_array[n-1-mid];
+for(int i=0;i<=n-2-mid;i++){
+    post_array[i]=array[i+mid+1];
+}
+int array[5]={1,2,3,4,5};
+cout<<binary_search(array,5,10);
+cout<<mid;
+if(binary_search(pre_array,mid+1,key)==-1 && binary_search(post_array,n-1-mid,key)==-1){cout<<-1;}
+if(binary_search(pre_array,mid+1,key)==-1 && binary_search(post_array,n-1-mid,key)!=-1){cout<<binary_search(post_array,n-1-mid,key);}
+if(binary_search(pre_array,mid+1,key)!=-1 && binary_search(post_array,n-1-mid,key)==-1){cout<<binary_search(pre_array,n-1-mid,key);}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return 0;
+}
