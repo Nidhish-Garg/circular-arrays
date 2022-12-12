@@ -1,0 +1,71 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define r(i,a,b) for(int i=a;i<b;i++)
+
+string my_string(string s){
+    int n=s.size();
+    string mystring="";
+    char mychar;
+    r(i,0,n){
+        
+        if(65<=int(s[i])<=90){
+            int x=int(s[i]);
+            mychar=char(x+32);
+            mystring=mystring+mychar;}
+        else if(97<=int(s[i])<=112){
+            mystring=mystring+s[i];}
+        else{continue;}}
+    return(mystring);
+}
+
+string reversal(string s){
+    int n=s.size();
+    string mystring="";
+    r(i,0,n){
+        mystring=mystring+s[n-1-i];
+    }
+    return(mystring);
+}
+
+bool ispalindrome(string s){
+    string s1=my_string(s);
+    string s2=reversal(s1);
+    return bool(s1==s2);
+}
+
+int main(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// string s=" ";
+// cout<<my_string(s);
+cout<<int(" ");
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+return 0;
+}
