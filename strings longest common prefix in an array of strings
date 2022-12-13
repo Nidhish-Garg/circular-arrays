@@ -1,0 +1,65 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define r(i,a,b) for(int i=a;i<b;i++)
+
+
+map<char,int> freq(string s){
+    int n=s.size();
+    map<char,int> freq_map;
+    r(i,0,n){
+        freq_map[s[i]]++;}
+return (freq_map);}
+
+
+bool isanagram(string s, string t){
+    map<char,int>::iterator it;
+    map<char,int>map1=freq(s);
+    map<char,int>map2=freq(t);
+    bool truth;
+    for(it=map1.begin();it!=map1.end();it++){
+        bool truth=false;
+        if(map2[it->first]==it->second){truth=true;}
+        else{break;}
+    }return truth;}
+
+
+int main(){
+
+
+
+
+
+
+
+
+int n;
+cin>>n;
+string array[n];
+string ans="";
+int truth;
+r(i,0,n){
+    cin>>array[i];
+}
+
+
+int min = array[0].size();
+r(i,0,n-1){
+    if(array[i].size()>array[i+1].size()){min=array[i+1].size();}
+}
+
+r(i,0,min){
+    r(j,0,n-1){
+        if(array[j][i]==array[j+1][i]){truth =1 ;continue;}
+        else{truth=0;break;}}
+    if(truth == 1){ans=ans+array[0][i];}
+}
+cout<<min;
+
+
+
+
+
+
+
+return 0;
+}
