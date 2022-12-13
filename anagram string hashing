@@ -1,0 +1,58 @@
+#include<bits/stdc++.h>
+using namespace std;
+#define r(i,a,b) for(int i=a;i<b;i++)
+
+
+map<char,int> freq(string s){
+    int n=s.size();
+    map<char,int> freq_map;
+    r(i,0,n){
+        freq_map[s[i]]++;}
+return (freq_map);}
+
+
+bool isanagram(string s, string t){
+    map<char,int>::iterator it;
+    map<char,int>map1=freq(s);
+    map<char,int>map2=freq(t);
+    bool truth;
+    for(it=map1.begin();it!=map1.end();it++){
+        bool truth=false;
+        if(map2[it->first]==it->second){truth=true;}
+        else{break;}
+    }return truth;}
+
+
+int main(){
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+string s="abds";
+string t="bdka";
+cout<<isanagram(s,t);
+
+
+cout<<typeid(s[1]).name();
+
+
+
+
+return 0;
+}
