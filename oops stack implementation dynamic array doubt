@@ -1,0 +1,11 @@
+////why this is correct , what is it ??
+class stack{
+  public:
+  int top;
+  int size;
+  int *arr;
+  stack(int size){
+    top=-1;
+    this->size=size;
+    arr=new int[size];}
+};
